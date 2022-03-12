@@ -11,7 +11,7 @@ screen shots
 <div align="center">
   <img src="https://imgur.com/a/S9u7Sxz.jpg" width="400px" </img>
  </div>
- ![imgur Image] (https://imgur.com/a/S9u7Sxz.jpg)
+ ![imgur Image] (https://imgur.com/a/S9u7Sxz.png)
 
 
 
