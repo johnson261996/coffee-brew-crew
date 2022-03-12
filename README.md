@@ -9,8 +9,9 @@ This project is a starting point for a Flutter application.
 screen shots
 
 <div align="center">
-  <img src="https://imgur.com/a/S9u7Sxz" width="400px" </img>
+  <img src="https://imgur.com/a/S9u7Sxz.jpg" width="400px" </img>
  </div>
+ ![imgur Image] (https://imgur.com/a/S9u7Sxz.jpg)
 
 
 
