@@ -5,7 +5,7 @@ it is a coffee app and it is used by the user what type of coffee you want to ch
 
 ## Directory Structure
 
-This project is a starting point for a Flutter application.
+```
 
 lib
 │───main.dart    
@@ -32,7 +32,7 @@ lib
      └────shared
           | ──constants.dart
           | ──loading.dart
-
+```
 
 ##  Screenshots
 <!-- 
