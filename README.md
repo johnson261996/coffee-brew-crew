@@ -8,7 +8,11 @@ This project is a starting point for a Flutter application.
 
 screen shots
 
-![Alt text] (https://imgur.com/a/S9u7Sxz "Login Screen")
+<div align="center">
+  <img src="https://imgur.com/a/S9u7Sxz" width="400px" </img>
+ </div>
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
