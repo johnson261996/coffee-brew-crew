@@ -7,6 +7,8 @@ import 'package:coffee/services/DatabaseService.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../../models/Person.dart';
+
 class Home extends StatelessWidget {
 
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
@@ -20,7 +22,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final user = Provider.of<Person?>(context);
     void ShowSettingPanel() {
       showModalBottomSheet(context: context, builder: (context){
         return Container(
@@ -32,7 +34,7 @@ class Home extends StatelessWidget {
 
 
     return StreamProvider<List<Brew>?>.value(
-      value: DatabaseServvice().brews,
+      value: DatabaseServvice(uid:user!.uid ).brews,
       initialData: null,
       child: Scaffold(
         backgroundColor: Colors.brown[50],
@@ -61,19 +63,19 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),*/
-            FlatButton.icon(
+            TextButton.icon(
                 onPressed: ()async {
                   await auth.signOut();
                 },
-                icon: Icon(Icons.logout),
-                label: Text('Log out!')
+                icon: Icon(Icons.logout,color: Colors.white,),
+                label: Text('Log out!',style: TextStyle(color: Colors.white))
             ),
-            FlatButton.icon(
+            TextButton.icon(
                 onPressed: (){
                   ShowSettingPanel();
                 },
-                icon: Icon(Icons.settings),
-                label: Text('setting')
+                icon: Icon(Icons.settings,color: Colors.white),
+                label: Text('setting',style: TextStyle(color: Colors.white,),)
             )
           ],
         ),

@@ -28,7 +28,7 @@ class _SettingFormState extends State<SettingForm> {
   Widget build(BuildContext context) {
     final user = Provider.of<Person?>(context);
     return StreamBuilder<PersonData>(
-      stream: DatabaseServvice(uid: user?.uid).userData,
+      stream: DatabaseServvice(uid: user!.uid).userData,
       builder: (context, snapshot) {
         print("snapshot:" + snapshot.hasData.toString());
 
@@ -42,7 +42,7 @@ class _SettingFormState extends State<SettingForm> {
                 SizedBox(height: 20.0,),
 
                 TextFormField(
-                  initialValue: personData?.name,
+                  initialValue: personData!.name,
                   decoration: textInputDecoration3,
                   validator: (val) => val!.isEmpty? 'please Enter a name':null,
                   onChanged: (val) => setState(() => currentname = val),
@@ -77,14 +77,17 @@ class _SettingFormState extends State<SettingForm> {
                   value: (currentstrength??personData!.strength).toDouble(),
                 ),
 
-                RaisedButton(
-                  color: Colors.pinkAccent,
+                TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.brown,
+                    textStyle: const TextStyle(fontSize: 20),
+                  ),
                   onPressed: () async {
                   if(formKey.currentState!.validate()){
-                    await DatabaseServvice(uid: user?.uid).updateUserData(
-                    currentsugar?? personData?.sugars,
-                    currentname ?? personData?.name,
-                    currentstrength?? personData?.strength);
+                    await DatabaseServvice(uid: user!.uid).updateUserData(
+                    currentsugar?? personData!.sugars,
+                    currentname ?? personData!.name,
+                    currentstrength?? personData!.strength);
                   }
                   Navigator.pop(context);
                   },

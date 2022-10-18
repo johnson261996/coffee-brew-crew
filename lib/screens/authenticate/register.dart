@@ -34,9 +34,9 @@ class _RegisterState extends State<Register> {
           elevation: 0.0,
           title: Text('Sign up in Coffee Brew'),
           actions: <Widget>[
-            FlatButton.icon(onPressed: (){
+            TextButton .icon(onPressed: (){
               widget.toggleView();
-            }, icon: Icon(Icons.person), label: Text('Sign in'))
+            }, icon: Icon(Icons.person,color: Colors.white,), label: Text('Sign in',style:TextStyle(color: Colors.white,),))
           ],
         ),
         body: Container(
@@ -65,8 +65,12 @@ class _RegisterState extends State<Register> {
                   setState(() => password = val);
                 },
               ),
-              RaisedButton(
-                  color: Colors.pink,
+              TextButton (
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.pink,
+                    backgroundColor: Colors.brown,
+                    textStyle: const TextStyle(fontSize: 20),
+                  ),
                   child: Text(
                     'Sign up',
                     style: TextStyle(color: Colors.white),

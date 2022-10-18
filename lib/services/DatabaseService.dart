@@ -5,10 +5,10 @@ import 'package:coffee/models/brew.dart';
 
 class DatabaseServvice {
 
-  final String? uid;
+  final String uid;
   final CollectionReference brewCollection = FirebaseFirestore.instance.collection("brews");
 
-  DatabaseServvice({ this.uid});
+  DatabaseServvice({ required this.uid});
 
   Future updateUserData(String? sugars,String? name,int? strength)async{
     return await brewCollection.doc(uid).set({

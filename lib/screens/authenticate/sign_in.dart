@@ -34,9 +34,9 @@ class _SignInState extends State<SignIn> {
         elevation: 0.0,
         title: Text('Sign in Coffee Brew'),
         actions: <Widget>[
-          FlatButton.icon(onPressed: (){
+          TextButton.icon(onPressed: (){
             widget.toggleView();
-          }, icon: Icon(Icons.person), label: Text('Register'))
+          }, icon: Icon(Icons.person,color: Colors.white,), label: Text('Register',style: TextStyle(color: Colors.white),))
         ],
       ),
       body: Container(
@@ -60,8 +60,13 @@ class _SignInState extends State<SignIn> {
                   setState(() => password = val);
                 },
               ),
-              RaisedButton(
-                color: Colors.pink,
+              SizedBox(height: 20.0,),
+              TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.pink,
+                    backgroundColor: Colors.brown ,
+                    textStyle: const TextStyle(fontSize: 20),
+                  ),
                   child: Text(
                     'Sign in',
                     style: TextStyle(color: Colors.white),
